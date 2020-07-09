@@ -1,6 +1,8 @@
 var MakeThirdDancer = function(top, left, timeBetweenSteps) {
 
   MakeDancer.call(this, top, left, timeBetweenSteps);
+  this.$node = $('<span class="dancer" id="third"></span>');
+  this.setPosition(top, left);
 
 }
 
@@ -10,7 +12,7 @@ MakeThirdDancer.prototype.constructor = MakeThirdDancer;
 MakeThirdDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this); //allows this(MakeThirdDancer) to be passed into MakeDancer..step function
   //this.step();
-  this.$node.toggle();
+  this.$node.slideUp().slideDown();
 }
 
 // var makeThirdDancer = function(top, left, timeBetweenSteps) {

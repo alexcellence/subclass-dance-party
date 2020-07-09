@@ -1,6 +1,7 @@
 var MakeSecondDancer = function(top, left, timeBetweenSteps) {
   MakeDancer.call(this, top, left, timeBetweenSteps);
-
+  this.$node = $('<span class="dancer" id="second"></span>');
+  this.setPosition(top, left);
 }
 
 MakeSecondDancer.prototype = Object.create(MakeDancer.prototype);

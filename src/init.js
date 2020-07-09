@@ -18,7 +18,7 @@ $(document).ready(function() {
     var dancerMakerFunctionName = $(this).data('dancer-maker-function-name');
 
     // get the maker function for the kind of dancer we're supposed to make
-    var dancerMakerFunction = window[dancerMakerFunctionName]; //window[dancerMakerFunctionName];
+    var dancerMakerFunction = window[dancerMakerFunctionName];
 
     // make a dancer with a random position
 
@@ -26,8 +26,50 @@ $(document).ready(function() {
       $("body").height() * Math.random(),
       $("body").width() * Math.random(),
       Math.random() * 1000
-    );
+      );
+      window.dancers.push(dancer);
     $('body').append(dancer.$node);
   });
+
+  $('.makeDancersLineUp').on('click', function(event) {
+
+    var lineUp = function() {
+      //should access the global variable window.dancers array
+      var allDancers = window.dancers;
+      //should reset the first dancer's position top: 450px and left: 150px
+      //set first dancer to position
+      allDancers[0].setPosition(450, 150);
+      // allDancers[0].left = 150;
+
+      for (var i = 1; i < allDancers.length; i++) {
+        // should reassign allDancers[i].top = 450 px
+
+        allDancers[i].setPosition(450, allDancers[i - 1].left + 175);
+        //should increment left for following dancers by +175px
+
+      }
+    };
+
+    lineUp();
+  });
+  console.log(allDancers);
 });
 
+
+
+// function() {
+//   //should access the global variable window.dancers array
+//   var allDancers = window.dancers;
+//   console.log(allDancers);
+//   //should reset the first dancer's position top: 450px and left: 150px
+//   //set first dancer to position
+//   allDancers[0].top = 450;
+//   allDancers[0].left = 150;
+
+//   for (var i = 1; i < allDancers.length; i++) {
+//     // should reassign allDancers[i].top = 450 px
+//     allDancers[i].top = 450;
+//     //should increment left for following dancers by +175px
+//     allDancers[i].left = allDancers[i - 1].left + 175;
+//   }
+// };
