@@ -1,13 +1,15 @@
 var MakeBlinkyDancer = function(top, left, timeBetweenSteps) {
 
   MakeDancer.call(this, top, left, timeBetweenSteps);
+
 }
 
 MakeBlinkyDancer.prototype = Object.create(MakeDancer.prototype);
 MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer;
 
 MakeBlinkyDancer.prototype.step = function() {
-  this.originalStep();
+  MakeDancer.prototype.step.call(this); //allows this(MakeBlinkyDancer) to be passed into MakeDancer..step function
+  //this.step();
   this.$node.toggle();
 }
 

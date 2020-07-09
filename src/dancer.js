@@ -4,12 +4,12 @@ var MakeDancer = function(top, left, timeBetweenSteps) {
   this.timeBetweenSteps = timeBetweenSteps;
   this.$node = $('<span class="dancer"></span>');
 
-  this.originalStep();
+  this.step();
   this.setPosition(top, left);
 };
 
-MakeDancer.prototype.originalStep = function() {
-  var newStep = this.originalStep.bind(this);//some binding function that binds MakeDancer with originalStep()
+MakeDancer.prototype.step = function() {
+  var newStep = this.step.bind(this);//some binding function that binds MakeDancer with originalStep()
   setTimeout(newStep, this.timeBetweenSteps);
 };
 
