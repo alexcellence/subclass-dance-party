@@ -12,7 +12,7 @@ MakeThirdDancer.prototype.constructor = MakeThirdDancer;
 MakeThirdDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this); //allows this(MakeThirdDancer) to be passed into MakeDancer..step function
   //this.step();
-  this.$node.slideUp().slideDown();
+  this.$node;
 }
 
 // var makeThirdDancer = function(top, left, timeBetweenSteps) {

@@ -12,7 +12,7 @@ MakeBlinkyDancer.prototype.constructor = MakeBlinkyDancer;
 MakeBlinkyDancer.prototype.step = function() {
   MakeDancer.prototype.step.call(this); //allows this(MakeBlinkyDancer) to be passed into MakeDancer..step function
   //this.step();
-  this.$node.toggle('explode');
+  this.$node;
 }
 
 // var makeBlinkyDancer = function(top, left, timeBetweenSteps) {

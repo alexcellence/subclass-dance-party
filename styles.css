@@ -4,46 +4,76 @@ body, html{
 
 body{
   margin: 0px;
-  background-color:#444;
-  background-image: url(/DanceFloors/Swamp.png);
+  background-color: #34ebd8;
+  background-image: url(/DanceFloors/KrustyKrab.gif);
   /*background-image: url(/DanceFloors/ColorBlocks.jpg);*/
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   font-size: 18px;
 }
 body, a:link, a:visited, a:active{
-  color: lightblue;
+  color: yellow;
 }
 .title, .addDancerButton, .makeDancersLineUp{
   padding:5px 12px;
   float:right;
+  font-size: 1.2em;
+}
+.addDancerButton{
+  color: yellow;
 }
 .topbar{
   height:32px;
-  background-color: #555;
+  /* background-color: #34ebd8; */
 }
 .title{
-  background-color: #777;
+  /* background-color: #34ebd8; */
 }
 
 #second{
   position:absolute;
-  content: url(/DancerImages/Shrek-PNG-Photo.png);
-  height: 100px;
-  width: 70px;
+  content: url(/DancerImages/Squidward.gif);
+  height: 300px;
+  width: 240px;
 }
 
 #third{
   position:absolute;
-  content: url(/DancerImages/PikachuHappy.png);
+  content: url(/DancerImages/PatrickStar.gif);
   /*content: url(/DancerImages/Pika-mobile.mp4);*/
-  height: 80px;
-  width: 80px;
+  height: 260px;
+  width: 260px;
+  animation: bounce-3 2s infinite;
 }
 
 #blinky{
   position:absolute;
-  content: url(/DancerImages/spoonge_ger.png);
-  height: 80px;
-  width: 80px;
+  content: url(/DancerImages/Bob.gif);
+  height: 260px;
+  width: 260px;
+  animation: moveLeft 5s;
+}
+
+#second:hover {
+  transform: scale(2.5);
+}
+
+.bounce-3 {
+  animation-name: bounce-3;
+  animation-timing-function: ease;
+}
+
+@keyframes bounce-3 {
+  0%   { transform: translateY(0); }
+  30%  { transform: translateY(-100px); }
+  50%  { transform: translateY(0); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes moveLeft {
+  0%     { left: 0; }
+  50%    { left: 50%; }
+  100%   { left: 100%;}
 }
 
